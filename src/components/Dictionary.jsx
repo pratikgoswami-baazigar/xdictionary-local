@@ -41,17 +41,15 @@ const [dictionary] = useState([
       </button>
 
       <div style={{ marginTop: '20px' }}>
-  {result === null ? (
-    <h3>Definition:</h3>
-  ) : result === "Word not found in the dictionary." ? (
+  <h3>Definition:</h3>
+  {result && result !== "Word not found in the dictionary." && (
     <p>{result}</p>
-  ) : (
-    <>
-      <h3>Definition:</h3>
-      <p>{result}</p>
-    </>
+  )}
+  {result === "Word not found in the dictionary." && (
+    <p>{result}</p>
   )}
 </div>
+
 
       
     </div>
